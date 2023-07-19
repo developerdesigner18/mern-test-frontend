@@ -11,6 +11,8 @@ import { GenderChart } from '../components/GenderChart';
 import { SalesVSTarget } from '../components/SalesVSTarget';
 import { TopProductSell } from '../components/TopProductSell';
 import { Header } from '../components/Header';
+import { ProfitAndRevenue } from '../components/ProfitAndRevenue';
+import { SalesConversionRate } from '../components/SalesConversionRate';
 
 export const Home = (props: any) => {
   const Item = styled(Paper)(({ theme }) => ({
@@ -66,6 +68,20 @@ export const Home = (props: any) => {
             <Paper>
               <h2>Top 10 Products</h2>
               <TopProductSell />
+            </Paper>
+          </Grid>
+          <Grid item xs={8}>
+            <Paper>
+              <h2>Profit And Revenue</h2>
+              <ProfitAndRevenue />
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper>
+              <h2>
+                Sales Conversion Rate:(%) <sub>(static)</sub>
+              </h2>
+              <SalesConversionRate />
             </Paper>
           </Grid>
         </Grid>

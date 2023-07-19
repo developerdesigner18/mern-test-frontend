@@ -23,7 +23,6 @@ ChartJS.register(
 export const SalesVSTarget = (props: any) => {
   const dispatch = useDispatch();
   const { data } = useSelector((state: any) => state.salesVSTarget);
-  console.log('data', data);
   const options = {
     responsive: true,
     plugins: {

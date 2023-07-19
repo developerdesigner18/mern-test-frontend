@@ -6,6 +6,7 @@ import { watchGetAgeCount } from './ageCountSaga';
 import { watchGetOccupationData } from './occupationSaga';
 import { watchGetGenderChartData } from './genderChartSaga';
 import { watchGetSalesVSTargetData } from './salesVSTargetSaga';
+import { watchGetProfitAndRevenue } from './profitAndRevenueSaga';
 // Import your sagas here
 // Example:
 // import { watchIncrementAsync } from './counterSaga';
@@ -21,6 +22,7 @@ function* rootSaga() {
     yield all([watchGetOccupationData()])
     yield all([watchGetGenderChartData()])
     yield all([watchGetSalesVSTargetData()])
+    yield all([watchGetProfitAndRevenue()])
 }
 
 export default rootSaga;

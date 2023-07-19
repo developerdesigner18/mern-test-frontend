@@ -8,6 +8,7 @@ import occupationReducer from './occupation.reducer';
 import genderChartReducer from './genderChart.reducer';
 import salesVSTargetReducer from './salesVSTarget.reducer';
 import topProductsReducer from './topProducts.reducer';
+import profitAndRevenueReducer from './profitAndRevenue.reducer';
 // Import your reducers here
 // Example:
 // import counterReducer from './counter';
@@ -23,7 +24,8 @@ const rootReducer = combineReducers({
   occupationData: occupationReducer,
   genderChart: genderChartReducer,
   salesVSTarget: salesVSTargetReducer,
-  topProductsSell: topProductsReducer
+  topProductsSell: topProductsReducer,
+  profitAndRevenue: profitAndRevenueReducer
 });
 
 export default rootReducer;

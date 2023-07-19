@@ -1,13 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
-interface AgeCountState {
+interface ProfitAndRevenueState {
     data: any,
     loading: boolean,
     error: any
 }
-export const getAgeCount = createAsyncThunk(
-    'ageCountSlice/getAgeCount',
+export const getProfitAndRevenueData = createAsyncThunk(
+    'ProfitAndRevenueSlice/getProfitAndRevenue',
     async (thunkAPI): Promise<any> => {
         let options = {
             method: "POST",
@@ -15,47 +15,48 @@ export const getAgeCount = createAsyncThunk(
             body: JSON.stringify({
                 query: `
             query{
-                getAgeCountData{
-                    teen
-                    adult
-                    senior
+                getRevenueAnalysisData{
+                    revenue
+                    cost
+                    profit
+                    month
                   }
             }`})
         }
         const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/graphql`, options);
         const text = await response.json();
-        return text.data.getAgeCountData
+        return text.data.getRevenueAnalysisData
     }
 )
 
 
 
-const initialState: AgeCountState = {
+const initialState: ProfitAndRevenueState = {
     data: [],
     loading: false,
     error: null
 }
 
 
-const ageCountSlice = createSlice({
-    name: 'ageCount',
+const ProfitAndRevenueSlice = createSlice({
+    name: 'profitAndRevenue',
     initialState,
     reducers: {
     },
     extraReducers: (builder) => {
-        builder.addCase(getAgeCount.pending, (state) => {
+        builder.addCase(getProfitAndRevenueData.pending, (state) => {
             state.loading = true
         })
-        builder.addCase(getAgeCount.fulfilled, (state, action) => {
+        builder.addCase(getProfitAndRevenueData.fulfilled, (state, action) => {
             state.data = action.payload
             state.loading = false
         })
-        builder.addCase(getAgeCount.rejected, (state, action) => {
+        builder.addCase(getProfitAndRevenueData.rejected, (state, action) => {
             state.error = action.error
             state.loading = false
         })
     }
 })
 
-export default ageCountSlice.reducer
+export default ProfitAndRevenueSlice.reducer
 

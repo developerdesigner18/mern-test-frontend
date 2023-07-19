@@ -1,10 +1,10 @@
 // store/index.ts
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { Action, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './reducers';
 import rootSaga from './saga/rootSaga';
-import thunk from 'redux-thunk';
+import thunk, { ThunkAction } from 'redux-thunk';
 
 const sagaMiddleware = createSagaMiddleware({
 });
@@ -17,6 +17,12 @@ const store = configureStore({
 sagaMiddleware.run(rootSaga);
 
 export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof rootReducer>;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
 
 export default store;

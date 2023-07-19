@@ -23,7 +23,6 @@ ChartJS.register(
 export const TopProductSell = (props: any) => {
   const dispatch = useDispatch();
   const { data } = useSelector((state: any) => state.topProductsSell);
-  console.log(data);
   const options = {
     indexAxis: 'y' as const,
     elements: {

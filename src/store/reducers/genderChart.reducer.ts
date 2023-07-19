@@ -24,7 +24,6 @@ export const getGenderChart = createAsyncThunk(
         }
         const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/graphql`, options);
         const text = await response.json();
-        console.log(text, "abcd");
         return text.data.getGenderData
     }
 )

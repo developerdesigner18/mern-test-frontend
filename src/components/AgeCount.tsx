@@ -11,6 +11,7 @@ import {
 import { Radar } from 'react-chartjs-2';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAgeCount } from '../store/reducers/ageCount.reducer';
+import { AppThunk } from '../store/store';
 
 ChartJS.register(
   RadialLinearScale,
