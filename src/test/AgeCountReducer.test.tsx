@@ -8,7 +8,6 @@ import { ClassificationType } from 'typescript';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-// Mock the fetch function for testing purposes
 jest.mock('node-fetch', () =>
   jest.fn(() =>
     Promise.resolve({
@@ -33,7 +32,6 @@ describe('Age Count Slice', () => {
     await store.dispatch<any>(getAgeCount());
 
     const actions = store.getActions();
-    console.log(actions, 'act');
     expect(actions[0].type).toBe(getAgeCount.pending.type);
     expect(actions[1].type).toBe(getAgeCount.fulfilled.type);
     expect(actions[1].payload).toEqual({

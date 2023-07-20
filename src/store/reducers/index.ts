@@ -1,4 +1,4 @@
-// store/reducers/index.ts
+
 import { combineReducers } from '@reduxjs/toolkit';
 import counterReducer from './counterReducer';
 import salesByRegionReducer from './salesByRegion.reducer';
@@ -9,14 +9,9 @@ import genderChartReducer from './genderChart.reducer';
 import salesVSTargetReducer from './salesVSTarget.reducer';
 import topProductsReducer from './topProducts.reducer';
 import profitAndRevenueReducer from './profitAndRevenue.reducer';
-// Import your reducers here
-// Example:
-// import counterReducer from './counter';
+
 
 const rootReducer = combineReducers({
-  // Add your reducers here
-  // Example:
-  // counter: counterReducer,
   counter: counterReducer,
   salesByRegion: salesByRegionReducer,
   salesByCategory: salesByCategoryReducer,

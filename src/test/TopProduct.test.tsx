@@ -6,14 +6,6 @@ import '@testing-library/jest-dom/extend-expect';
 import { OccupationData } from '../components/OccupationData';
 import { TopProductSell } from '../components/TopProductSell';
 
-// test('renders radar chart', () => {
-//   render(
-//     <Provider store={store}>
-//       <AgeCount />
-//     </Provider>
-//   );
-//   expect(screen.getByText('Age Count')).toBeInTheDocument();
-// });
 jest.mock('react-chartjs-2', () => ({
   Bar: () => <div data-testid='radar-chart-mock-occupation'></div>,
 }));

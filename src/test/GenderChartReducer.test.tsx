@@ -8,7 +8,6 @@ import genderChartReducer, {
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-// Mock the fetch function for testing purposes
 jest.mock('node-fetch', () =>
   jest.fn(() =>
     Promise.resolve({

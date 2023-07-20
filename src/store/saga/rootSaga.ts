@@ -7,14 +7,10 @@ import { watchGetOccupationData } from './occupationSaga';
 import { watchGetGenderChartData } from './genderChartSaga';
 import { watchGetSalesVSTargetData } from './salesVSTargetSaga';
 import { watchGetProfitAndRevenue } from './profitAndRevenueSaga';
-// Import your sagas here
-// Example:
-// import { watchIncrementAsync } from './counterSaga';
+
 
 function* rootSaga() {
-    // Add your sagas here
-    // Example:
-    // yield all([watchIncrementAsync()]);
+
     yield all([watchIncrementAsync(), watchDecrementAsync()]);
     yield all([watchGetSalesByRegion()])
     yield all([watchGetSalesByCategory()])

@@ -1,4 +1,4 @@
-// store/index.ts
+
 import { Action, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
