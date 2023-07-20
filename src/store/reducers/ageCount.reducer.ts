@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import fetch from 'node-fetch';
-
+// import fetch from 'node-fetch';
+//  *if you want to use fetch api while testing you have un comment above line.
+// ? Since fetch is a web API, when we execute the test command, it runs on the Node server and not in the browser.
+// ? Consequently, if you run the test command without uncommenting the above import line, it will throw an error.
 interface AgeCountState {
     data: any,
     loading: boolean,
