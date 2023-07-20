@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react';
-import { AgeCount } from '../components/AgeCount';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import store from '../store/store';
 import '@testing-library/jest-dom/extend-expect';
+import { ProfitAndRevenue } from '../components/ProfitAndRevenue';
 
 // test('renders radar chart', () => {
 //   render(
@@ -13,13 +13,13 @@ import '@testing-library/jest-dom/extend-expect';
 //   expect(screen.getByText('Age Count')).toBeInTheDocument();
 // });
 jest.mock('react-chartjs-2', () => ({
-  Radar: () => <div data-testid='radar-chart-mock'></div>,
+  Bar: () => <div data-testid='radar-chart-mock-occupation'></div>,
 }));
 
-test('renders Age count chart', () => {
+test('renders bar chart', () => {
   render(
     <Provider store={store}>
-      <AgeCount />
+      <ProfitAndRevenue />
     </Provider>
   );
 });

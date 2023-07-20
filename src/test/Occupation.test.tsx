@@ -3,6 +3,7 @@ import { AgeCount } from '../components/AgeCount';
 import { Provider } from 'react-redux';
 import store from '../store/store';
 import '@testing-library/jest-dom/extend-expect';
+import { OccupationData } from '../components/OccupationData';
 
 // test('renders radar chart', () => {
 //   render(
@@ -13,13 +14,13 @@ import '@testing-library/jest-dom/extend-expect';
 //   expect(screen.getByText('Age Count')).toBeInTheDocument();
 // });
 jest.mock('react-chartjs-2', () => ({
-  Radar: () => <div data-testid='radar-chart-mock'></div>,
+  Bar: () => <div data-testid='radar-chart-mock-occupation'></div>,
 }));
 
-test('renders Age count chart', () => {
+test('renders occupation data chart', () => {
   render(
     <Provider store={store}>
-      <AgeCount />
+      <OccupationData />
     </Provider>
   );
 });

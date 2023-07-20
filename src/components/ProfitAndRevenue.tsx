@@ -23,7 +23,7 @@ ChartJS.register(
 export const ProfitAndRevenue = (props: any) => {
   const dispatch = useDispatch();
   let { data } = useSelector((state: any) => state.profitAndRevenue);
-  data = data.toReversed();
+  data = data.slice().reverse();
   const months = [
     'January',
     'February',

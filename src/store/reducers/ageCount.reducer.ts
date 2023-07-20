@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
+import fetch from 'node-fetch';
 
 interface AgeCountState {
     data: any,
@@ -23,7 +23,7 @@ export const getAgeCount = createAsyncThunk(
             }`})
         }
         const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/graphql`, options);
-        const text = await response.json();
+        const text: any = await response.json();
         return text.data.getAgeCountData
     }
 )
